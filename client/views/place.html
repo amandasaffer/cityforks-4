@@ -1,14 +1,10 @@
 <template name="place">
-{{#contentFor "subheaderButtonLeft"}}
-  {{> ionNavBackButton path="places"}}
-{{/contentFor}}
-{{#contentFor "subheaderTitle"}}
-  <h1 class="title">Details</h1>
-{{/contentFor}}
+{{> subheader title="Details" backButton="places"}}
 
 {{#with place}}
-  {{#ionView}}
-    {{#ionContent}}
+  <div class="scroll-content">
+    <div class="content">
+      
       <div class="place-info">
         {{#if photos}}
           <div style="background-image: url(https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference={{photos.[0].photo_reference}}&key=AIzaSyCtfoCAldCEf8hXUlkVUd4UljqKR6W_aF4)" class="place-photo"></div>
@@ -16,7 +12,7 @@
 
         <!-- name / opening -->
         <div class="row">
-          <div class="col">
+          <div class="small-12 columns">
             <h3>{{name}}</h3>
             {{#if opening_hours.open_now}}
               <div class="open-circ"></div> <span class="open">Open</span> 
@@ -26,20 +22,20 @@
 
         <!-- price & rating-->
         <div class="row meta-info">
-          <div class="col">
+          <div class="small-6 columns">
             {{#if rating}}
               <span class="meta stars">{{{getStars rating}}}</span>
             {{else}}
               <span class="meta">No Ratings</span>
             {{/if}}
           </div>
-          <div class="col">
+          <div class="small-6 columns">
             <span class="meta price">{{price}}</span>
           </div>
         </div>
 
         <div class="row">
-          <div class="col">
+          <div class="small-12 columns">
             <div class="info-section">
               <span class="meta">Address</span>
               <p>{{vicinity}}</p>
@@ -54,18 +50,18 @@
       </div>
 
       <div class="list">
-        <a class="item item-icon-left item-icon-right" href="#">
-          <i class="icon ion-ios-location-outline icon-left"></i>
+        <a class="item with-icons" href="#">
+          <div class="icon-left"><i class="icon ion-ios-location-outline"></i></div>
           Get Directions
-          <i class="icon ion-ios-arrow-right"></i>
+          <div class="icon-right"><i class="icon ion-ios-arrow-right"></i></div>
         </a>
-        <a class="item item-icon-left item-icon-right" href="#">
-          <i class="icon ion-ios-paper-outline icon-left"></i>
+        <a class="item with-icons" href="#">
+          <div class="icon-left"><i class="icon ion-ios-paper-outline"></i></div>
           Read Reviews
-          <i class="icon ion-ios-arrow-right"></i>
+          <div class="icon-right"><i class="icon ion-ios-arrow-right"></i></div>
         </a>
       </div>
-    {{/ionContent}}
-  {{/ionView}}
+    </div>
+  </div>
 {{/with}}
 </template>

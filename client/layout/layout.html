@@ -1,16 +1,26 @@
 <template name="layout">
-  {{#ionBody}}
+  <body>
     {{> header}}
-    {{> subheader}}
+    <!-- i tried to put scroll-content and content here but there's a weird bug. try it yourself. -->
+    {{> yield}}
 
-    {{#ionNavView}}
-      {{> yield}}
-    {{/ionNavView}}
 
-    {{#ionTabs style="ios" class="tabs-assertive"}}
-      {{> ionTab title="Places" path="places" iconOff="ios-list-outline" iconOn="ios-list"}}
-      {{> ionTab title="Map" path="map" iconOff="ios-location-outline" iconOn="ios-location"}}
-    {{/ionTabs}}
+      <div class="tabs navigation-tabs">
+        <div class="row">
+          <div class="small-6 small-centered columns">
+            <a class="nav-tab active" href="/">
+              <i class="icon ion-ios-list"></i> 
+              <span>Places</span>
+            </a>
+          </div>
+
+          <div class="small-6 small-centered columns">
+            <a class="nav-tab" href="/map">
+              <i class="icon ion-ios-location-outline"></i> <span>Map</span>
+            </a>
+          </div>
+        </div>
+      </div>
     
-  {{/ionBody}}
+  </body>
 </template>

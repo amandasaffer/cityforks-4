@@ -1,13 +1,11 @@
 <template name="map">
-  {{#contentFor "subheaderTitle"}}
-    <h1 class="title">Map</h1>
-  {{/contentFor}}
+{{> subheader title="Map"}}
 
-  {{#ionView}}
-    {{#ionContent}}
-      <div id="map" style="height: 100%"></div>
-    {{/ionContent}}
-  {{/ionView}}
+<div class="scroll-content">
+  <div class="content">
+    <div id="map" style="height: 100%"></div>
+  </div>
+</div>
 </template>
 
 <template name="marker">

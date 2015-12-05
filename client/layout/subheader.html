@@ -1,10 +1,9 @@
 <template name="subheader">
-  {{#ionSubheaderBar class="bar-stable"}}
-    {{> yield "subheaderButtonLeft"}}
-
-    {{> yield "subheaderTitle"}}
-
-    {{> yield "subheaderButtonRight"}}
-
-  {{/ionSubheaderBar}}
+  <div class="bar bar-subheader">
+    {{#if backButton}} 
+    	<!-- Josh, you'll need to set up the 'back' path here -->
+    	<button class="buttons button button-clear back-button pull-left"><i class="icon ion-ios-arrow-back"></i>Back</button>
+    {{/if}}
+    <h1 class="title">{{title}}</h1>
+  </div>
 </template>

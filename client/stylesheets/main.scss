@@ -1,46 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-
-$positive: #404286;
-$loading-font-size: 22px;
 $font-stack: 'Montserrat', sans-serif;
 
-// @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
-@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
-
-// override ionic's default.
-// reference: https://github.com/meteoric/meteor-ionic/issues/264
-body .ionic-body {
-  .content.overflow-scroll { top: 99px; }
+body {
   font-family: $font-stack;
+}
+
+.content { 
+  top: 99px !important; 
+  bottom: 49px;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: $font-stack;
 }
 
-.bar-header {
-  text-align: center;
-  background-size: 100% 0px;
-  height: 56px; //override ionic's default
-  a {
-    position: relative;
-    top: 10px;
-  }
-
-  .logo {
-    max-height: 36px;
-  }
-}
-
-.bar-subheader {
-  margin-top: 11px; //override ionic's default
-  background-size: 100% 0px;
-}
-
 .place {
   h2 { 
     font-size: 1.2rem;
+    text-overflow: ellipsis;
   }
 
   .item-note {
@@ -68,13 +45,15 @@ span.meta {
 }
 
 .place-info {
+  padding-top: 15px;
   .place-photo {
     background-size: cover;
-    background-position: 50% 55%;
+    background-position: 50% 45%;
     text-align: center;
     letter-spacing: 1px;
-    height: 20vh;
-    margin-bottom: 3vh;
+    height: 23vh;
+    margin-top: -15px;
+    margin-bottom: 1.8rem;
   }
 
   h3 {
@@ -121,6 +100,7 @@ span.meta {
     bottom: 6px;
     margin: 0 2px 0 5px;
   }
+
   .open {
     font-size: 1rem;
     white-space: nowrap;
@@ -131,7 +111,14 @@ span.meta {
   }
 }
 
-.info-section {
-  margin-bottom: 4vh;
+.navigation-tabs {
+  background: #F24532;
+  padding: .1rem 0;
+  color: #fff;
+  font-size: 10px;
+  line-height: 14px;
 }
 
+.info-section { 
+  margin-bottom: 2rem; 
+}

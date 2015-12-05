@@ -1,36 +1,33 @@
 <template name="places">
-  {{#contentFor "subheaderTitle"}}
-    <h1 class="title">Nearby Places</h1>
-  {{/contentFor}}
+{{> subheader title="Nearby Places"}}
 
-  {{#ionView}}
-    {{#ionContent}}
-      {{#ionList}}
-        <div id="places">
-        {{#each places}}
-          {{#ionItem path="place"}}
-            <div class="row place">
-              <div class="col col-90">
-                <h2>{{name}}</h2>
-                <p>
-                {{#if price}}
-                  {{price}}
-                {{/if}}
-                {{#if rating}}
-                  <span class="meta divider">|</span>
-                  <span class="meta stars">{{{getStars rating}}}</span>
-                {{/if}}
-                </p>
-              </div>
-
-              <div class="col arrow">
-                <i class="icon ion-ios-arrow-right"></i>
-              </div>
+<div class="scroll-content">
+  <div class="content">   
+    <div id="places">
+      {{#each places}}
+        <!-- TODO: josh, dunno if this is the right way to path this. was just trying to adapt ionic -->
+        <a class="item" href="/p/{{_id}}">
+          <div class="row place">
+            <div class="small-10 columns">
+              <h2>{{name}}</h2>
+              <p>
+              {{#if price}}
+                {{price}}
+              {{/if}}
+              {{#if rating}}
+                <span class="meta divider">|</span>
+                <span class="meta stars">{{{getStars rating}}}</span>
+              {{/if}}
+              </p>
             </div>
-          {{/ionItem}}
-        {{/each}}
-        </div>
-      {{/ionList}}
-    {{/ionContent}}
-  {{/ionView}}
+
+            <div class="small-2 columns arrow">
+              <i class="icon ion-ios-arrow-right"></i>
+            </div>
+          </div>
+        </a>
+      {{/each}}
+    </div>        
+  </div>
+</div>
 </template>

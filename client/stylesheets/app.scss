@@ -1,0 +1,12 @@
+@import '{zurb:foundation-sites}/scss/foundation';
+
+@import 'partials/normalize',
+				'partials/scaffold',
+				'partials/bars',
+				'partials/tabs',
+				'partials/lists';
+
+@include foundation-flex-grid;
+@include foundation-button;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
